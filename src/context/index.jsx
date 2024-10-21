@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
 
@@ -7,5 +7,12 @@ export const AuthContext = createContext(null);
 
 
 export default function AuthState({children}){
-    return <AuthContext.Provider>{children}</AuthContext.Provider>
+
+    const [registerFormData, setRegisterFormData] = useState({
+        name: '',
+        email: '',
+        password: ''
+    })
+
+    return <AuthContext.Provider value={{registerFormData, setRegisterFormData}}>{children}</AuthContext.Provider>
 }
