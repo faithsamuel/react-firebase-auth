@@ -14,5 +14,9 @@ export default function AuthState({children}){
         password: ''
     })
 
-    return <AuthContext.Provider value={{registerFormData, setRegisterFormData}}>{children}</AuthContext.Provider>
+    function registerOnSubmit() {
+
+    }
+
+    return <AuthContext.Provider value={{registerFormData, setRegisterFormData, registerOnSubmit}}>{children}</AuthContext.Provider>
 }
